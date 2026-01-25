@@ -25,7 +25,7 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore: update build files"
-          file_pattern: "dist/*"
+          file_pattern: "dist-js/*"
           branch: build           # ← 目标分支名称
           create_branch: true     # ← 如果分支不存在则创建
           push_options: '--force' # ← 强制推送（可选，保持单commit历史）
