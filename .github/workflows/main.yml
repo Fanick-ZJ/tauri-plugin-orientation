@@ -28,4 +28,5 @@ jobs:
           file_pattern: "dist-js/*"
           branch: build           # ← 目标分支名称
           create_branch: true     # ← 如果分支不存在则创建
+          add_options: "-f"  # ← 关键！强制添加被忽略的文件
           push_options: '--force' # ← 强制推送（可选，保持单commit历史）
