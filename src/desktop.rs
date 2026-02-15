@@ -6,20 +6,29 @@ use crate::models::*;
 pub fn init<R: Runtime, C: DeserializeOwned>(
     app: &AppHandle<R>,
     _api: PluginApi<R, C>,
-) -> crate::Result<FullScreen<R>> {
-    Ok(FullScreen(app.clone()))
+) -> crate::Result<Orientation<R>> {
+    Ok(Orientation(app.clone()))
 }
 
-/// Access to the fullscreen APIs.
-pub struct FullScreen<R: Runtime>(AppHandle<R>);
+/// Access to the orientation APIs.
+pub struct Orientation<R: Runtime>(AppHandle<R>);
 
-impl<R: Runtime> FullScreen<R> {
-    pub fn full(&self, payload: FullRequest) -> crate::Result<FullResponse> {
-        // TODO: Implement fullscreen functionality
-        Ok(FullResponse { value: false })
+impl<R: Runtime> Orientation<R> {
+    /// 设置显示方向（桌面端暂不支持）
+    pub fn set_orientation(
+        &self,
+        _payload: SetOrientationRequest,
+    ) -> crate::Result<SetOrientationResponse> {
+        // TODO: Implement desktop orientation functionality if needed
+        Ok(SetOrientationResponse { success: false })
     }
-    pub fn exit(&self, payload: ExitRequest) -> crate::Result<ExitResponse> {
-        // TODO: Implement fullscreen functionality
-        Ok(ExitResponse { value: false })
+
+    /// 恢复默认方向设置（桌面端暂不支持）
+    pub fn restore_orientation(
+        &self,
+        _payload: RestoreOrientationRequest,
+    ) -> crate::Result<RestoreOrientationResponse> {
+        // TODO: Implement desktop orientation functionality if needed
+        Ok(RestoreOrientationResponse { success: false })
     }
 }

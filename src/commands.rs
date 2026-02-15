@@ -1,21 +1,23 @@
 use tauri::{command, AppHandle, Runtime};
 
 use crate::models::*;
-use crate::FullScreenExt;
+use crate::OrientationExt;
 use crate::Result;
 
+/// 设置显示方向
 #[command]
-pub(crate) async fn full<R: Runtime>(
+pub(crate) async fn set_orientation<R: Runtime>(
     app: AppHandle<R>,
-    payload: FullRequest,
-) -> Result<FullResponse> {
-    app.full_screen().full(payload)
+    payload: SetOrientationRequest,
+) -> Result<SetOrientationResponse> {
+    app.orientation().set_orientation(payload)
 }
 
+/// 恢复默认方向设置
 #[command]
-pub(crate) async fn exit<R: Runtime>(
+pub(crate) async fn restore_orientation<R: Runtime>(
     app: AppHandle<R>,
-    payload: ExitRequest,
-) -> Result<ExitResponse> {
-    app.full_screen().exit(payload)
+) -> Result<RestoreOrientationResponse> {
+    app.orientation()
+        .restore_orientation(RestoreOrientationRequest {})
 }

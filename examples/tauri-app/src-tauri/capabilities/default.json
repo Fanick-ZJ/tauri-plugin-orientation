@@ -3,5 +3,5 @@
   "identifier": "default",
   "description": "enables the default permissions",
   "windows": ["main"],
-  "permissions": ["core:default", "fullscreen:default"]
+  "permissions": ["core:default", "orientation:default"]
 }

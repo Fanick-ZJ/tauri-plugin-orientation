@@ -1,2 +1,2 @@
-# Tauri Plugin fullscreen
-# tauri-plugin-fullscreen
+# Tauri Plugin orientation
+# tauri-plugin-orientation

@@ -17,31 +17,34 @@ mod models;
 pub use error::{Error, Result};
 
 #[cfg(desktop)]
-use desktop::FullScreen;
+use desktop::Orientation;
 #[cfg(mobile)]
-use mobile::FullScreen;
+use mobile::Orientation;
 
-/// Extensions to [`tauri::App`], [`tauri::AppHandle`] and [`tauri::Window`] to access the fullscreen APIs.
-pub trait FullScreenExt<R: Runtime> {
-    fn full_screen(&self) -> &FullScreen<R>;
+/// Extensions to [`tauri::App`], [`tauri::AppHandle`] and [`tauri::Window`] to access the orientation APIs.
+pub trait OrientationExt<R: Runtime> {
+    fn orientation(&self) -> &Orientation<R>;
 }
 
-impl<R: Runtime, T: Manager<R>> crate::FullScreenExt<R> for T {
-    fn full_screen(&self) -> &FullScreen<R> {
-        self.state::<FullScreen<R>>().inner()
+impl<R: Runtime, T: Manager<R>> crate::OrientationExt<R> for T {
+    fn orientation(&self) -> &Orientation<R> {
+        self.state::<Orientation<R>>().inner()
     }
 }
 
 /// Initializes the plugin.
 pub fn init<R: Runtime>() -> TauriPlugin<R> {
-    Builder::new("fullscreen")
-        .invoke_handler(tauri::generate_handler![commands::full, commands::exit])
+    Builder::new("orientation")
+        .invoke_handler(tauri::generate_handler![
+            commands::set_orientation,
+            commands::restore_orientation
+        ])
         .setup(|app, api| {
             #[cfg(mobile)]
-            let full_screen = mobile::init(app, api)?;
+            let orientation = mobile::init(app, api)?;
             #[cfg(desktop)]
-            let full_screen = desktop::init(app, api)?;
-            app.manage(full_screen);
+            let orientation = desktop::init(app, api)?;
+            app.manage(orientation);
             Ok(())
         })
         .build()

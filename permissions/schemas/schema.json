@@ -319,10 +319,34 @@
           "markdownDescription": "Denies the full command without any pre-configured scope."
         },
         {
-          "description": "Default permissions for the plugin\n#### This default permission set includes:\n\n- `allow-full`\n- `allow-exit`",
+          "description": "Enables the restore_orientation command without any pre-configured scope.",
+          "type": "string",
+          "const": "allow-restore-orientation",
+          "markdownDescription": "Enables the restore_orientation command without any pre-configured scope."
+        },
+        {
+          "description": "Denies the restore_orientation command without any pre-configured scope.",
+          "type": "string",
+          "const": "deny-restore-orientation",
+          "markdownDescription": "Denies the restore_orientation command without any pre-configured scope."
+        },
+        {
+          "description": "Enables the set_orientation command without any pre-configured scope.",
+          "type": "string",
+          "const": "allow-set-orientation",
+          "markdownDescription": "Enables the set_orientation command without any pre-configured scope."
+        },
+        {
+          "description": "Denies the set_orientation command without any pre-configured scope.",
+          "type": "string",
+          "const": "deny-set-orientation",
+          "markdownDescription": "Denies the set_orientation command without any pre-configured scope."
+        },
+        {
+          "description": "Default permissions for the plugin\n#### This default permission set includes:\n\n- `allow-set-orientation`\n- `allow-restore-orientation`",
           "type": "string",
           "const": "default",
-          "markdownDescription": "Default permissions for the plugin\n#### This default permission set includes:\n\n- `allow-full`\n- `allow-exit`"
+          "markdownDescription": "Default permissions for the plugin\n#### This default permission set includes:\n\n- `allow-set-orientation`\n- `allow-restore-orientation`"
         }
       ]
     }

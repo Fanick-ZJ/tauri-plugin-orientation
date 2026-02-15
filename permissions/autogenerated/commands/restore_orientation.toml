@@ -1,0 +1,13 @@
+# Automatically generated - DO NOT EDIT!
+
+"$schema" = "../../schemas/schema.json"
+
+[[permission]]
+identifier = "allow-restore-orientation"
+description = "Enables the restore_orientation command without any pre-configured scope."
+commands.allow = ["restore_orientation"]
+
+[[permission]]
+identifier = "deny-restore-orientation"
+description = "Denies the restore_orientation command without any pre-configured scope."
+commands.deny = ["restore_orientation"]

@@ -11,7 +11,7 @@ importers:
       '@tauri-apps/api':
         specifier: ^2.0.0
         version: 2.9.1
-      tauri-plugin-fullscreen-api:
+      tauri-plugin-orientation-api:
         specifier: file:../../
         version: file:../..
     devDependencies:
@@ -514,7 +514,7 @@ packages:
     resolution: {integrity: sha512-gHdOWQILqvQgqvILjEd87yKy6OKHWlWu7hILXoxvEUo9+iPQ1snPHiR7IGiwRdaC1a9GWC8oWN6QSpQEIb28VQ==}
     engines: {node: '>=18'}
 
-  tauri-plugin-fullscreen-api@file:../..:
+  tauri-plugin-orientation-api@file:../..:
     resolution: {directory: ../.., type: directory}
 
   tinyglobby@0.2.15:
@@ -947,7 +947,7 @@ snapshots:
       magic-string: 0.30.21
       zimmerframe: 1.1.4
 
-  tauri-plugin-fullscreen-api@file:../..:
+  tauri-plugin-orientation-api@file:../..:
     dependencies:
       '@tauri-apps/api': 2.9.1
 

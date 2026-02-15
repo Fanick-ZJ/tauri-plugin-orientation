@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.plugin.fullscreen"
+    namespace = "com.plugin.orientation"
     compileSdk = 36
 
     defaultConfig {

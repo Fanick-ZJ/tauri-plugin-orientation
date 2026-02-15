@@ -19,4 +19,4 @@ tauri-build = { version = "2.5.3", default-features = false , features = [] }
 
 [dependencies]
 tauri = { version = "2.9.4", features = [] }
-tauri-plugin-fullscreen = { path = "../../../" }
+tauri-plugin-orientation = { path = "../../../" }
