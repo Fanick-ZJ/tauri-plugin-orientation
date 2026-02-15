@@ -12,7 +12,7 @@ export const Orientation = {
 /**
  * 设置方向参数接口
  */
-export interface SetOrientationOptions {
+export interface OrientationOptions {
   /** 显示方向 */
   orientation: (typeof Orientation)[keyof typeof Orientation];
   /** 是否隐藏状态栏（顶部），默认 true */
@@ -50,7 +50,7 @@ export interface SetOrientationOptions {
  * ```
  */
 export async function setOrientation(
-  options: SetOrientationOptions,
+  options: OrientationOptions,
 ): Promise<boolean> {
   return await invoke<{ success: boolean }>(
     "plugin:orientation|set_orientation",
